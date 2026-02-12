@@ -1,0 +1,10 @@
+flwr==1.15.1
+flwr-datasets==0.3.0
+matplotlib==3.9.1
+numpy==1.26.0
+pandas==2.2.2
+Pillow==10.0.1
+ray==2.10.0
+torch==2.1.1
+torchvision==0.16.1
+tqdm==4.66.4
