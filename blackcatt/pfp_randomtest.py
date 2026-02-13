@@ -177,7 +177,7 @@ m = 250
 n_users = 60
 clients_tardos_q = np.loadtxt("wm_constants/" + 'clients_tardos_q_100_k0.5.csv').astype(int)[:n_users,:m]
 p_secret = np.loadtxt("wm_constants/" + 'p_secret_100_k0.5.csv').astype(float)[:m,:]
-tau =  0.0038
+tau =  0.001
 
 # Path to triggers
 index = 431
