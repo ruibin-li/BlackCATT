@@ -14,18 +14,18 @@ except ImportError:
 wm_constants = "wm_constants/"
 
 # Training
-n_users = 20 # = options.num-supernodes in pyproject.toml
+n_users = 2 # = options.num-supernodes in pyproject.toml
 user_fraction = 10 / n_users # = fraction-fit in pyproject.toml
 mlr = 0.01 # main task learning rate
 mbs = 64 # local minibatch size
 max_batches = (50000//n_users)//mbs # 1 local epoch total data//mbs
-dataset = "CIFAR100" # "CIFAR100" # "CIFAR10"
-n_classes = 100 # 10 for CIFAR10, 100 for CIFAR100
+dataset = "CIFAR10" # "CIFAR100" # "CIFAR10"
+n_classes = 10 # 10 for CIFAR10, 100 for CIFAR100
 model = "ResNet183x3" # "ResNet183x3" # "VGG16"
 
 # Black box WM
 tlr = 0.0001 # trigger learning rate
-m = 250 # trigger set size
+m = 10 # trigger set size
 trigger_type = "random" # "random" # "stealthy" # "unique" # "unique" means each user gets their own unique set of triggers, only implemented for vanilla approach, will crash otherwise
 lambda_reg = 0.1 # regularization weight # 0.1
 k_cols = 5 # number of emulated collusions # 5 
@@ -36,7 +36,7 @@ t_alpha_pix = 64 # total pixel value change budget # 64
 t_alpha = t_alpha_pix/255*2 # normalized change budget
 t_rounds = 1 # trigger optimization rounds # 1
 # Functional Regularization
-lambda_cl = 0.1 # weight of functional regularization term # 0.1
+lambda_cl = 0.0 # weight of functional regularization term # 0.1
 dataset_cl = "huggan/wikiart" # "huggan/wikiart" # "zh-plus/tiny-imagenet" # "uoft-cs/cifar100"
 reserve_testing_images = False # whether to reserve part of testing images for functional regularization / comparison with those experiments
 
