@@ -161,55 +161,106 @@ def evaluate_config(server_round):
     return {"current_round": adjusted_round, "server_round": server_round}
 
 
-def check_metrics(net,i_cid,valloader,device):
-    """Check metrics for the training evolution"""
+def check_metrics(net, i_cid, valloader, device):
+    """Check metrics for the training evolution."""
+    import time
+
+    i_cid = int(i_cid)
     net.eval()
+
     ### Main task accuracy ###
-    loss, accuracy = test(net, valloader, device)
+    with torch.no_grad():
+        loss, accuracy = test(net, valloader, device)
+
     ### Trigger accuracy ###
-    # Load and normalize triggers
     if wm_config.trigger_type == "unique":
-        triggers = _normalize_triggers(np.load(wm_config.folder + "triggers.npy")[i_cid*wm_config.m:(i_cid+1)*wm_config.m,:,:,:], device)
+        triggers_np = np.load(wm_config.folder + "triggers.npy")[
+            i_cid * wm_config.m : (i_cid + 1) * wm_config.m, :, :, :
+        ]
+        triggers = _normalize_triggers(triggers_np, device)
     else:
         triggers = _normalize_triggers(np.load(wm_config.folder + "triggers.npy"), device)
-    labels = wm_config.clients_tardos_q_tensor[int(i_cid),:].to(device)
+
+    labels = wm_config.clients_tardos_q_tensor[i_cid, :].to(device)
+
     with torch.no_grad():
         outputs = net(triggers)
         _, predicted = outputs.max(1)
         correct = predicted.eq(labels).sum().item()
-    t_accuracy =correct/wm_config.m
-    ### MAV ### (Or acc in case of unique triggers)
-    # Open auxiliary model (i_cid + 1)
-    while(1):
-        # In case there is a collision reading the file
+
+    t_accuracy = correct / wm_config.m
+
+    ### MAV / collusion metrics ###
+    # Wrap around so the last client colludes with client 0.
+    col_cid = (i_cid + 1) % wm_config.n_users
+
+    client_col_params = None
+    last_err = None
+
+    for _attempt in range(100):
         try:
-            with open(wm_config.folder + "client_status_"+str(i_cid+1)+".pkl", 'rb') as f:
+            with open(wm_config.folder + "client_status_" + str(col_cid) + ".pkl", "rb") as f:
                 client_col_status = pickle.load(f)
                 client_col_params = client_col_status["parameters"]
             break
-        except:
-            continue
-    collusion_weights = [1/2*(aux_cid.numpy() + curr_cid) for (_,aux_cid), curr_cid in zip(client_col_params.items(),get_weights(net))]
-    set_weights(net, collusion_weights)
-    if wm_config.trigger_type == "unique":
-        with torch.no_grad():
-            outputs = net(triggers)
-            _, predicted = outputs.max(1)
-            correct = predicted.eq(labels).sum().item()
-            t_accuracy_c2 =correct/wm_config.m
-        with open(wm_config.folder + "metrics_"+str(i_cid)+".csv", "a") as file:
-            file.write(f"{loss},{accuracy},{t_accuracy},{t_accuracy_c2}\n")
-    else:
-        with torch.no_grad():
-            outputs = net(triggers)
-            y = torch.argmax(outputs,dim=1).cpu().numpy()
-            mav = np.average([y[i] not in wm_config.clients_tardos_q[i_cid:i_cid+2,i] for i in range(wm_config.m)])
-            tp, t_s = tardos_accusation(y,vectors=wm_config.clients_tardos_q, p_secret=wm_config.p_secret, tau=wm_config.tau)
-            fp = tp not in [i_cid,i_cid+1]
-            fn = tp == -1
-        ### Append to csv file ###
-        with open(wm_config.folder + "metrics_"+str(i_cid)+".csv", "a") as file:
-            file.write(f"{loss},{accuracy},{t_accuracy},{mav},{fn},{fp}\n")
+        except Exception as e:
+            last_err = e
+            time.sleep(0.1)
+
+    if client_col_params is None:
+        raise RuntimeError(
+            f"Could not load colluder client_status_{col_cid}.pkl for cid={i_cid}"
+        ) from last_err
+
+    original_weights = get_weights(net)
+
+    collusion_weights = [
+        0.5 * (aux_cid.numpy() + curr_cid)
+        for (_, aux_cid), curr_cid in zip(client_col_params.items(), original_weights)
+    ]
+
+    try:
+        set_weights(net, collusion_weights)
+
+        if wm_config.trigger_type == "unique":
+            with torch.no_grad():
+                outputs = net(triggers)
+                _, predicted = outputs.max(1)
+                correct = predicted.eq(labels).sum().item()
+                t_accuracy_c2 = correct / wm_config.m
+
+            with open(wm_config.folder + "metrics_" + str(i_cid) + ".csv", "a") as file:
+                file.write(f"{loss},{accuracy},{t_accuracy},{t_accuracy_c2}\n")
+
+        else:
+            with torch.no_grad():
+                outputs = net(triggers)
+                y = torch.argmax(outputs, dim=1).cpu().numpy()
+
+                colluder_vectors = wm_config.clients_tardos_q[[i_cid, col_cid], :]
+                mav = np.average([
+                    y[i] not in colluder_vectors[:, i]
+                    for i in range(wm_config.m)
+                ])
+
+                tp, t_s = tardos_accusation(
+                    y,
+                    vectors=wm_config.clients_tardos_q,
+                    p_secret=wm_config.p_secret,
+                    tau=wm_config.tau,
+                )
+
+                fp = tp not in [i_cid, col_cid]
+                fn = tp == -1
+
+            with open(wm_config.folder + "metrics_" + str(i_cid) + ".csv", "a") as file:
+                file.write(f"{loss},{accuracy},{t_accuracy},{mav},{fn},{fp}\n")
+
+    finally:
+        set_weights(net, original_weights)
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+
     return loss, len(valloader.dataset), accuracy
 
 

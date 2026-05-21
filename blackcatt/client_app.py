@@ -10,6 +10,8 @@ import blackcatt.wm_config as wm_config
 import blackcatt.models as models
 import os
 
+
+
 # Define Flower Client with unique model copy and client_fn
 class WM_FlowerClient(NumPyClient):
     def __init__(self, context: Context):
@@ -50,24 +52,25 @@ class WM_FlowerClient(NumPyClient):
 
     def evaluate(self, parameters, config):
         ### Using this function to update and watermark all copies ###
-        # While this is done server-side, it is implemented here to 
-        # leverage the parallelization of the accuracy clients in flwr
-        update_client(self.net,parameters,self.client_state)
-        wm_client(self.net,self.cid,self.client_state,self.device)
-        # Storing the model state can be done only every couple of rounds 
-        # to prevent excessive data writing / reading of large models
-        # IF there is no collusion-aware embedding, otherwise it needs to
-        # be saved every round to keep track of the different model copies
-        if config["current_round"] % 1 == 0:
-            save_parameters(self.cid,self.client_state)
-        # For evaluation purposes, we don't need this to run for all rounds / all cids
-        if config["current_round"] % 25 == 0 and self.cid < 10:
-            loss, val_items, accuracy = check_metrics(self.net,self.cid,self.valloader,self.device)
-            return loss, val_items, {"accuracy": accuracy}
-        else:
-            # flwr still wants to receive something
-            return 0.0, 1, {"accuracy": 0.0}
+        update_client(self.net, parameters, self.client_state)
+        wm_client(self.net, self.cid, self.client_state, self.device)
 
+        # Store model state every round
+        if config["current_round"] % 1 == 0:
+            save_parameters(self.cid, self.client_state)
+
+        # For evaluation purposes, run heavy metrics only every 25 rounds
+        if config["current_round"] % 25 == 0 and self.cid < min(10, wm_config.n_users):
+            loss, val_items, accuracy = check_metrics(
+                self.net,
+                self.cid,
+                self.valloader,
+                self.device,
+            )
+            return loss, val_items, {"accuracy": accuracy}
+
+        # flwr still wants to receive something
+        return 0.0, 1, {"accuracy": 0.0}
 
 def client_fn(context: Context):
     # Return Client instance

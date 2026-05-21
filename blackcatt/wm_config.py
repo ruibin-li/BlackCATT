@@ -14,7 +14,7 @@ except ImportError:
 wm_constants = "wm_constants/"
 
 # Training
-n_users = 2 # = options.num-supernodes in pyproject.toml
+n_users = 10 # = options.num-supernodes in pyproject.toml
 user_fraction = 10 / n_users # = fraction-fit in pyproject.toml
 mlr = 0.01 # main task learning rate
 mbs = 64 # local minibatch size
@@ -25,7 +25,7 @@ model = "ResNet183x3" # "ResNet183x3" # "VGG16"
 
 # Black box WM
 tlr = 0.0001 # trigger learning rate
-m = 10 # trigger set size
+m = 100 # trigger set size
 trigger_type = "random" # "random" # "stealthy" # "unique" # "unique" means each user gets their own unique set of triggers, only implemented for vanilla approach, will crash otherwise
 lambda_reg = 0.1 # regularization weight # 0.1
 k_cols = 5 # number of emulated collusions # 5 

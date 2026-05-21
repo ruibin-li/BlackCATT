@@ -27,7 +27,7 @@ serverapp = "blackcatt.server_app:app"
 clientapp = "blackcatt.client_app:app"
 
 [tool.flwr.app.config]
-num-server-rounds = 2 
+num-server-rounds = 50
 fraction-fit = 1
 local-epochs = 1
 
@@ -35,6 +35,6 @@ local-epochs = 1
 default = "local-simulation"
 
 [tool.flwr.federations.local-simulation]
-options.num-supernodes = 2
+options.num-supernodes = 10
 options.backend.client-resources.num-cpus = 2
-options.backend.client-resources.num-gpus = 0.25
+options.backend.client-resources.num-gpus = 0.5

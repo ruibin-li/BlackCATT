@@ -1,0 +1,13 @@
+
+# local env
+.venv/
+
+# generated files
+__pycache__/
+*.pyc
+
+# models/checkpoints
+FL_models/
+
+# temporary backups
+*.bak*
