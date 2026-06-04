@@ -27,7 +27,7 @@ serverapp = "blackcatt.server_app:app"
 clientapp = "blackcatt.client_app:app"
 
 [tool.flwr.app.config]
-num-server-rounds = 50
+num-server-rounds = 1
 fraction-fit = 1
 local-epochs = 1
 

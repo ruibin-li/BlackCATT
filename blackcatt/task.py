@@ -1,10 +1,16 @@
+from blackcatt.partitioning import make_partitioner, print_label_distribution
 """blackcatt: A Flower / PyTorch app."""
 
-from collections import OrderedDict
+from collections import OrderedDict, Counter
 
 import torch
 from flwr_datasets import FederatedDataset
-from flwr_datasets.partitioner import IidPartitioner
+from flwr_datasets.partitioner import IidPartitioner, PathologicalPartitioner
+
+try:
+    from flwr_datasets.partitioner import ShardPartitioner
+except ImportError:
+    ShardPartitioner = None
 from flwr.common import ParametersRecord, array_from_numpy
 from torch.utils.data import DataLoader
 from torchvision.transforms import Compose, Normalize, ToTensor, RandomCrop, RandomHorizontalFlip
@@ -18,7 +24,7 @@ fds = None  # Cache FederatedDataset
 def load_data(partition_id: int, num_partitions: int, dataset = wm_config.dataset):
     global fds
     # Only initialize `FederatedDataset` once
-    partitioner = IidPartitioner(num_partitions=num_partitions)
+    partitioner = make_partitioner(num_partitions, dataset)
     if fds is None:
         if dataset == "CIFAR10":
             """Load partition CIFAR10 data."""
@@ -35,6 +41,7 @@ def load_data(partition_id: int, num_partitions: int, dataset = wm_config.datase
         else:
             raise ValueError(f"Unsupported dataset: {dataset}")
     partition = fds.load_partition(partition_id)
+    print_label_distribution(partition, partition_id, dataset)
     # Divide data on each node: 80% train, 20% test
     partition_train_test = partition.train_test_split(test_size=0.2, seed=42)
     if (dataset == "CIFAR10") or (dataset == "CIFAR100"):

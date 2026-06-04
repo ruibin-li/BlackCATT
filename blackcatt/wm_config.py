@@ -23,6 +23,19 @@ dataset = "CIFAR10" # "CIFAR100" # "CIFAR10"
 n_classes = 10 # 10 for CIFAR10, 100 for CIFAR100
 model = "ResNet183x3" # "ResNet183x3" # "VGG16"
 
+# Data partitioning / heterogeneity
+# Options:
+#   "iid"          : original IID split
+#   "pathological": each client receives a fixed number of labels
+#   "shard"       : classical shard-based non-IID split
+partition_mode = "pathological"
+num_classes_per_client = 5
+num_shards_per_client = 5
+partition_seed = 42
+class_assignment_mode = "first-deterministic"
+print_partition_stats = True
+
+
 # Black box WM
 tlr = 0.0001 # trigger learning rate
 m = 100 # trigger set size
@@ -63,7 +76,18 @@ testing_images_suffix = ""
 if reserve_testing_images == True:
   testing_images_suffix = "_RTI"
 
-folder = "FL_models/"+model+"_"+dataset+testing_images_suffix+"_" + str(n_users) + "users_0.5k_" + str(m) + "m" + triggers_suffix + "_" + str(mbs) + "mbs_" + str(mlr) + "mlr_" + str(tlr) + "tlr_" + str(max_batches) + "mbatches_" + str(lambda_reg) + "lambdaregCOL" + str(k_cols) + "_" + str(t_alpha_pix) + "talphaTRIG_"+str(dataset_cl.split("/")[-1])+"CLAvgKL"+str(lambda_cl)+"_" + str(t_rounds) + "troundsBest_test/"
+
+partition_suffix = ""
+if partition_mode == "iid":
+    partition_suffix = "_IID"
+elif partition_mode == "pathological":
+    partition_suffix = "_PATH" + str(num_classes_per_client) + "labels"
+elif partition_mode == "shard":
+    partition_suffix = "_SHARD" + str(num_shards_per_client) + "shards"
+else:
+    partition_suffix = "_UNKNOWNPARTITION"
+
+folder = "FL_models/"+model+"_"+dataset+testing_images_suffix+partition_suffix+"_" + str(n_users) + "users_0.5k_" + str(m) + "m" + triggers_suffix + "_" + str(mbs) + "mbs_" + str(mlr) + "mlr_" + str(tlr) + "tlr_" + str(max_batches) + "mbatches_" + str(lambda_reg) + "lambdaregCOL" + str(k_cols) + "_" + str(t_alpha_pix) + "talphaTRIG_"+str(dataset_cl.split("/")[-1])+"CLAvgKL"+str(lambda_cl)+"_" + str(t_rounds) + "troundsBest_test/"
 if not os.path.exists(folder):
   os.makedirs(folder)
 
