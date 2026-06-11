@@ -25,3 +25,33 @@ __pycache__/
 
 # system
 .DS_Store
+
+# experiment/debug outputs
+*.log
+*.out
+*.err
+*.bak
+*.bak_*
+*_summary*.txt
+analysis_auc_short/
+heter_compare/
+FL_models/
+runs/
+outputs/
+checkpoints/
+wandb/
+
+# model/data artifacts
+*.pth
+*.pt
+*.ckpt
+*.pkl
+*.npy
+*.npz
+*.csv
+*.jsonl
+
+# caches
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
