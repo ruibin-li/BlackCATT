@@ -250,8 +250,8 @@ def check_metrics(net, i_cid, valloader, device):
                     tau=wm_config.tau,
                 )
 
-                fp = tp not in [i_cid, col_cid]
                 fn = tp == -1
+                fp = (tp != -1) and (tp not in [i_cid, col_cid])
 
             with open(wm_config.folder + "metrics_" + str(i_cid) + ".csv", "a") as file:
                 file.write(f"{loss},{accuracy},{t_accuracy},{mav},{fn},{fp}\n")
@@ -714,7 +714,7 @@ def tardos_accusation(y,vectors,p_secret,tau,pfp=0.000001):
     
     # Calculate the Tardos score for each client
     for client_index in range(vectors.shape[0]):
-      t_score[client_index] += tardos_score(vectors[client_index,mi-1:mi],y[mi-1:mi],p_secret[mi-1:mi])
+      t_score[client_index] += tardos_score(vectors[client_index, mi:mi+1], y[mi:mi+1], p_secret[mi:mi+1])
     
     # Accuse if the score is above the threshold
     if max(t_score) > Z:

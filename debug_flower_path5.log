@@ -1,0 +1,703 @@
+2026-06-04 17:59:26 pid=86688 DEBUG_PATCH_LOADED
+2026-06-04 17:59:32 pid=87377 DEBUG_PATCH_LOADED
+2026-06-04 17:59:32 pid=87376 DEBUG_PATCH_LOADED
+2026-06-04 17:59:36 pid=87376 FIT_START cid=1 round=NA
+2026-06-04 17:59:36 pid=87376 CALL train
+2026-06-04 17:59:36 pid=87377 FIT_START cid=0 round=NA
+2026-06-04 17:59:36 pid=87377 CALL train
+2026-06-04 17:59:37 pid=87376 RET  train dt=0.786s
+2026-06-04 17:59:37 pid=87376 FIT_DONE  cid=1 round=NA dt=0.789s
+2026-06-04 17:59:37 pid=87377 RET  train dt=0.789s
+2026-06-04 17:59:37 pid=87377 FIT_DONE  cid=0 round=NA dt=0.792s
+2026-06-04 17:59:38 pid=87376 FIT_START cid=2 round=NA
+2026-06-04 17:59:38 pid=87376 CALL train
+2026-06-04 17:59:38 pid=87377 FIT_START cid=3 round=NA
+2026-06-04 17:59:38 pid=87377 CALL train
+2026-06-04 17:59:38 pid=87376 RET  train dt=0.277s
+2026-06-04 17:59:38 pid=87376 FIT_DONE  cid=2 round=NA dt=0.281s
+2026-06-04 17:59:38 pid=87377 RET  train dt=0.305s
+2026-06-04 17:59:38 pid=87377 FIT_DONE  cid=3 round=NA dt=0.308s
+2026-06-04 17:59:39 pid=87376 FIT_START cid=4 round=NA
+2026-06-04 17:59:39 pid=87377 FIT_START cid=5 round=NA
+2026-06-04 17:59:39 pid=87376 CALL train
+2026-06-04 17:59:39 pid=87377 CALL train
+2026-06-04 17:59:40 pid=87377 RET  train dt=0.378s
+2026-06-04 17:59:40 pid=87377 FIT_DONE  cid=5 round=NA dt=0.382s
+2026-06-04 17:59:40 pid=87376 RET  train dt=0.390s
+2026-06-04 17:59:40 pid=87376 FIT_DONE  cid=4 round=NA dt=0.395s
+2026-06-04 17:59:41 pid=87377 FIT_START cid=6 round=NA
+2026-06-04 17:59:41 pid=87377 CALL train
+2026-06-04 17:59:41 pid=87376 FIT_START cid=8 round=NA
+2026-06-04 17:59:41 pid=87376 CALL train
+2026-06-04 17:59:41 pid=87377 RET  train dt=0.382s
+2026-06-04 17:59:41 pid=87377 FIT_DONE  cid=6 round=NA dt=0.386s
+2026-06-04 17:59:41 pid=87376 RET  train dt=0.373s
+2026-06-04 17:59:41 pid=87376 FIT_DONE  cid=8 round=NA dt=0.381s
+2026-06-04 17:59:42 pid=87376 FIT_START cid=7 round=NA
+2026-06-04 17:59:42 pid=87376 CALL train
+2026-06-04 17:59:42 pid=87377 FIT_START cid=9 round=NA
+2026-06-04 17:59:42 pid=87377 CALL train
+2026-06-04 17:59:42 pid=87376 RET  train dt=0.292s
+2026-06-04 17:59:42 pid=87376 FIT_DONE  cid=7 round=NA dt=0.295s
+2026-06-04 17:59:42 pid=87377 RET  train dt=0.290s
+2026-06-04 17:59:42 pid=87377 FIT_DONE  cid=9 round=NA dt=0.294s
+2026-06-04 17:59:43 pid=87376 EVAL_START cid=1 round=NA
+2026-06-04 17:59:43 pid=87377 EVAL_START cid=0 round=NA
+2026-06-04 17:59:43 pid=87376 CALL update_client
+2026-06-04 17:59:43 pid=87377 CALL update_client
+2026-06-04 17:59:43 pid=87376 RET  update_client dt=0.086s
+2026-06-04 17:59:43 pid=87376 CALL wm_client
+2026-06-04 17:59:44 pid=87377 RET  update_client dt=0.102s
+2026-06-04 17:59:44 pid=87377 CALL wm_client
+2026-06-04 17:59:44 pid=87377 RET  wm_client dt=0.678s
+2026-06-04 17:59:44 pid=87377 CALL save_parameters
+2026-06-04 17:59:44 pid=87376 RET  wm_client dt=0.714s
+2026-06-04 17:59:44 pid=87376 CALL save_parameters
+2026-06-04 17:59:44 pid=87377 RET  save_parameters dt=0.193s
+2026-06-04 17:59:44 pid=87377 CALL check_metrics
+2026-06-04 17:59:44 pid=87376 RET  save_parameters dt=0.202s
+2026-06-04 17:59:44 pid=87376 CALL check_metrics
+2026-06-04 17:59:47 pid=87377 RET  check_metrics dt=3.089s
+2026-06-04 17:59:47 pid=87377 EVAL_DONE  cid=0 round=NA dt=4.074s
+2026-06-04 17:59:48 pid=87376 RET  check_metrics dt=3.107s
+2026-06-04 17:59:48 pid=87376 EVAL_DONE  cid=1 round=NA dt=4.124s
+2026-06-04 17:59:48 pid=87377 EVAL_START cid=2 round=NA
+2026-06-04 17:59:48 pid=87377 CALL update_client
+2026-06-04 17:59:48 pid=87377 RET  update_client dt=0.079s
+2026-06-04 17:59:48 pid=87377 CALL wm_client
+2026-06-04 17:59:48 pid=87376 EVAL_START cid=3 round=NA
+2026-06-04 17:59:48 pid=87376 CALL update_client
+2026-06-04 17:59:48 pid=87376 RET  update_client dt=0.084s
+2026-06-04 17:59:48 pid=87376 CALL wm_client
+2026-06-04 17:59:49 pid=87377 RET  wm_client dt=0.461s
+2026-06-04 17:59:49 pid=87377 CALL save_parameters
+2026-06-04 17:59:49 pid=87377 RET  save_parameters dt=0.181s
+2026-06-04 17:59:49 pid=87377 CALL check_metrics
+2026-06-04 17:59:49 pid=87376 RET  wm_client dt=0.595s
+2026-06-04 17:59:49 pid=87376 CALL save_parameters
+2026-06-04 17:59:49 pid=87376 RET  save_parameters dt=0.221s
+2026-06-04 17:59:49 pid=87376 CALL check_metrics
+2026-06-04 17:59:52 pid=87377 RET  check_metrics dt=3.026s
+2026-06-04 17:59:52 pid=87377 EVAL_DONE  cid=2 round=NA dt=3.765s
+2026-06-04 17:59:52 pid=87376 RET  check_metrics dt=3.003s
+2026-06-04 17:59:52 pid=87376 EVAL_DONE  cid=3 round=NA dt=3.922s
+2026-06-04 17:59:52 pid=87377 EVAL_START cid=4 round=NA
+2026-06-04 17:59:52 pid=87377 CALL update_client
+2026-06-04 17:59:52 pid=87377 RET  update_client dt=0.074s
+2026-06-04 17:59:52 pid=87377 CALL wm_client
+2026-06-04 17:59:53 pid=87376 EVAL_START cid=5 round=NA
+2026-06-04 17:59:53 pid=87376 CALL update_client
+2026-06-04 17:59:53 pid=87376 RET  update_client dt=0.101s
+2026-06-04 17:59:53 pid=87376 CALL wm_client
+2026-06-04 17:59:53 pid=87377 RET  wm_client dt=0.460s
+2026-06-04 17:59:53 pid=87377 CALL save_parameters
+2026-06-04 17:59:53 pid=87377 RET  save_parameters dt=0.228s
+2026-06-04 17:59:53 pid=87377 CALL check_metrics
+2026-06-04 17:59:53 pid=87376 RET  wm_client dt=0.553s
+2026-06-04 17:59:53 pid=87376 CALL save_parameters
+2026-06-04 17:59:53 pid=87376 RET  save_parameters dt=0.179s
+2026-06-04 17:59:53 pid=87376 CALL check_metrics
+2026-06-04 17:59:56 pid=87377 RET  check_metrics dt=3.042s
+2026-06-04 17:59:56 pid=87377 EVAL_DONE  cid=4 round=NA dt=3.819s
+2026-06-04 17:59:56 pid=87376 RET  check_metrics dt=3.022s
+2026-06-04 17:59:56 pid=87376 EVAL_DONE  cid=5 round=NA dt=3.868s
+2026-06-04 17:59:57 pid=87377 EVAL_START cid=6 round=NA
+2026-06-04 17:59:57 pid=87377 CALL update_client
+2026-06-04 17:59:57 pid=87377 RET  update_client dt=0.073s
+2026-06-04 17:59:57 pid=87377 CALL wm_client
+2026-06-04 17:59:57 pid=87376 EVAL_START cid=7 round=NA
+2026-06-04 17:59:57 pid=87376 CALL update_client
+2026-06-04 17:59:57 pid=87377 RET  wm_client dt=0.449s
+2026-06-04 17:59:57 pid=87377 CALL save_parameters
+2026-06-04 17:59:57 pid=87376 RET  update_client dt=0.072s
+2026-06-04 17:59:57 pid=87376 CALL wm_client
+2026-06-04 17:59:57 pid=87377 RET  save_parameters dt=0.206s
+2026-06-04 17:59:57 pid=87377 CALL check_metrics
+2026-06-04 17:59:58 pid=87376 RET  wm_client dt=0.515s
+2026-06-04 17:59:58 pid=87376 CALL save_parameters
+2026-06-04 17:59:58 pid=87376 RET  save_parameters dt=0.186s
+2026-06-04 17:59:58 pid=87376 CALL check_metrics
+2026-06-04 18:00:00 pid=87377 RET  check_metrics dt=3.033s
+2026-06-04 18:00:00 pid=87377 EVAL_DONE  cid=6 round=NA dt=3.775s
+2026-06-04 18:00:01 pid=87377 EVAL_START cid=8 round=NA
+2026-06-04 18:00:01 pid=87377 CALL update_client
+2026-06-04 18:00:01 pid=87376 RET  check_metrics dt=2.972s
+2026-06-04 18:00:01 pid=87377 RET  update_client dt=0.081s
+2026-06-04 18:00:01 pid=87376 EVAL_DONE  cid=7 round=NA dt=3.760s
+2026-06-04 18:00:01 pid=87377 CALL wm_client
+2026-06-04 18:00:01 pid=87376 EVAL_START cid=9 round=NA
+2026-06-04 18:00:01 pid=87376 CALL update_client
+2026-06-04 18:00:01 pid=87376 RET  update_client dt=0.074s
+2026-06-04 18:00:01 pid=87376 CALL wm_client
+2026-06-04 18:00:02 pid=87377 RET  wm_client dt=1.382s
+2026-06-04 18:00:02 pid=87377 CALL save_parameters
+2026-06-04 18:00:02 pid=87377 RET  save_parameters dt=0.211s
+2026-06-04 18:00:02 pid=87377 CALL check_metrics
+2026-06-04 18:00:04 pid=87376 RET  wm_client dt=2.899s
+2026-06-04 18:00:04 pid=87376 CALL save_parameters
+2026-06-04 18:00:04 pid=87376 RET  save_parameters dt=0.174s
+2026-06-04 18:00:04 pid=87376 CALL check_metrics
+2026-06-04 18:00:06 pid=87377 RET  check_metrics dt=3.173s
+2026-06-04 18:00:06 pid=87377 EVAL_DONE  cid=8 round=NA dt=4.863s
+2026-06-04 18:00:08 pid=87376 RET  check_metrics dt=3.065s
+2026-06-04 18:00:08 pid=87376 EVAL_DONE  cid=9 round=NA dt=6.228s
+2026-06-04 18:00:14 pid=87377 FIT_START cid=1 round=NA
+2026-06-04 18:00:14 pid=87377 CALL train
+2026-06-04 18:00:14 pid=87376 FIT_START cid=0 round=NA
+2026-06-04 18:00:14 pid=87376 CALL train
+2026-06-04 18:00:14 pid=87377 RET  train dt=0.331s
+2026-06-04 18:00:14 pid=87377 FIT_DONE  cid=1 round=NA dt=0.335s
+2026-06-04 18:00:14 pid=87376 RET  train dt=0.332s
+2026-06-04 18:00:15 pid=87376 FIT_DONE  cid=0 round=NA dt=0.340s
+2026-06-04 18:00:15 pid=87377 FIT_START cid=3 round=NA
+2026-06-04 18:00:15 pid=87377 CALL train
+2026-06-04 18:00:15 pid=87376 FIT_START cid=2 round=NA
+2026-06-04 18:00:15 pid=87376 CALL train
+2026-06-04 18:00:16 pid=87377 RET  train dt=0.328s
+2026-06-04 18:00:16 pid=87377 FIT_DONE  cid=3 round=NA dt=0.331s
+2026-06-04 18:00:16 pid=87376 RET  train dt=0.327s
+2026-06-04 18:00:16 pid=87376 FIT_DONE  cid=2 round=NA dt=0.331s
+2026-06-04 18:00:16 pid=87377 FIT_START cid=4 round=NA
+2026-06-04 18:00:16 pid=87377 CALL train
+2026-06-04 18:00:17 pid=87376 FIT_START cid=5 round=NA
+2026-06-04 18:00:17 pid=87376 CALL train
+2026-06-04 18:00:17 pid=87377 RET  train dt=0.267s
+2026-06-04 18:00:17 pid=87377 FIT_DONE  cid=4 round=NA dt=0.271s
+2026-06-04 18:00:17 pid=87376 RET  train dt=0.270s
+2026-06-04 18:00:17 pid=87376 FIT_DONE  cid=5 round=NA dt=0.275s
+2026-06-04 18:00:17 pid=87376 FIT_START cid=7 round=NA
+2026-06-04 18:00:17 pid=87377 FIT_START cid=6 round=NA
+2026-06-04 18:00:17 pid=87376 CALL train
+2026-06-04 18:00:17 pid=87377 CALL train
+2026-06-04 18:00:18 pid=87377 RET  train dt=0.353s
+2026-06-04 18:00:18 pid=87376 RET  train dt=0.356s
+2026-06-04 18:00:18 pid=87377 FIT_DONE  cid=6 round=NA dt=0.357s
+2026-06-04 18:00:18 pid=87376 FIT_DONE  cid=7 round=NA dt=0.361s
+2026-06-04 18:00:18 pid=87376 FIT_START cid=9 round=NA
+2026-06-04 18:00:18 pid=87376 CALL train
+2026-06-04 18:00:18 pid=87377 FIT_START cid=8 round=NA
+2026-06-04 18:00:18 pid=87377 CALL train
+2026-06-04 18:00:19 pid=87376 RET  train dt=0.286s
+2026-06-04 18:00:19 pid=87376 FIT_DONE  cid=9 round=NA dt=0.289s
+2026-06-04 18:00:19 pid=87377 RET  train dt=0.293s
+2026-06-04 18:00:19 pid=87377 FIT_DONE  cid=8 round=NA dt=0.296s
+2026-06-04 18:00:20 pid=87376 EVAL_START cid=2 round=NA
+2026-06-04 18:00:20 pid=87376 CALL update_client
+2026-06-04 18:00:20 pid=87377 EVAL_START cid=1 round=NA
+2026-06-04 18:00:20 pid=87377 CALL update_client
+2026-06-04 18:00:20 pid=87376 RET  update_client dt=0.078s
+2026-06-04 18:00:20 pid=87376 CALL wm_client
+2026-06-04 18:00:20 pid=87377 RET  update_client dt=0.079s
+2026-06-04 18:00:20 pid=87377 CALL wm_client
+2026-06-04 18:00:20 pid=87376 RET  wm_client dt=0.494s
+2026-06-04 18:00:20 pid=87376 CALL save_parameters
+2026-06-04 18:00:20 pid=87377 RET  wm_client dt=0.588s
+2026-06-04 18:00:20 pid=87377 CALL save_parameters
+2026-06-04 18:00:21 pid=87376 RET  save_parameters dt=0.258s
+2026-06-04 18:00:21 pid=87376 CALL check_metrics
+2026-06-04 18:00:21 pid=87377 RET  save_parameters dt=0.182s
+2026-06-04 18:00:21 pid=87377 CALL check_metrics
+2026-06-04 18:00:24 pid=87376 RET  check_metrics dt=3.042s
+2026-06-04 18:00:24 pid=87376 EVAL_DONE  cid=2 round=NA dt=3.885s
+2026-06-04 18:00:24 pid=87377 RET  check_metrics dt=3.057s
+2026-06-04 18:00:24 pid=87377 EVAL_DONE  cid=1 round=NA dt=3.921s
+2026-06-04 18:00:24 pid=87376 EVAL_START cid=4 round=NA
+2026-06-04 18:00:24 pid=87376 CALL update_client
+2026-06-04 18:00:24 pid=87377 EVAL_START cid=6 round=NA
+2026-06-04 18:00:24 pid=87377 CALL update_client
+2026-06-04 18:00:24 pid=87376 RET  update_client dt=0.080s
+2026-06-04 18:00:24 pid=87376 CALL wm_client
+2026-06-04 18:00:24 pid=87377 RET  update_client dt=0.087s
+2026-06-04 18:00:24 pid=87377 CALL wm_client
+2026-06-04 18:00:25 pid=87376 RET  wm_client dt=0.501s
+2026-06-04 18:00:25 pid=87376 CALL save_parameters
+2026-06-04 18:00:25 pid=87377 RET  wm_client dt=0.586s
+2026-06-04 18:00:25 pid=87377 CALL save_parameters
+2026-06-04 18:00:25 pid=87376 RET  save_parameters dt=0.177s
+2026-06-04 18:00:25 pid=87376 CALL check_metrics
+2026-06-04 18:00:25 pid=87377 RET  save_parameters dt=0.234s
+2026-06-04 18:00:25 pid=87377 CALL check_metrics
+2026-06-04 18:00:28 pid=87376 RET  check_metrics dt=2.958s
+2026-06-04 18:00:28 pid=87376 EVAL_DONE  cid=4 round=NA dt=3.731s
+2026-06-04 18:00:28 pid=87377 RET  check_metrics dt=2.957s
+2026-06-04 18:00:28 pid=87377 EVAL_DONE  cid=6 round=NA dt=3.879s
+2026-06-04 18:00:28 pid=87376 EVAL_START cid=7 round=NA
+2026-06-04 18:00:28 pid=87376 CALL update_client
+2026-06-04 18:00:28 pid=87376 RET  update_client dt=0.074s
+2026-06-04 18:00:28 pid=87376 CALL wm_client
+2026-06-04 18:00:29 pid=87377 EVAL_START cid=8 round=NA
+2026-06-04 18:00:29 pid=87377 CALL update_client
+2026-06-04 18:00:29 pid=87377 RET  update_client dt=0.074s
+2026-06-04 18:00:29 pid=87377 CALL wm_client
+2026-06-04 18:00:29 pid=87376 RET  wm_client dt=0.470s
+2026-06-04 18:00:29 pid=87376 CALL save_parameters
+2026-06-04 18:00:29 pid=87376 RET  save_parameters dt=0.217s
+2026-06-04 18:00:29 pid=87376 CALL check_metrics
+2026-06-04 18:00:29 pid=87377 RET  wm_client dt=0.614s
+2026-06-04 18:00:29 pid=87377 CALL save_parameters
+2026-06-04 18:00:30 pid=87377 RET  save_parameters dt=0.258s
+2026-06-04 18:00:30 pid=87377 CALL check_metrics
+2026-06-04 18:00:32 pid=87376 RET  check_metrics dt=3.026s
+2026-06-04 18:00:32 pid=87376 EVAL_DONE  cid=7 round=NA dt=3.834s
+2026-06-04 18:00:33 pid=87377 RET  check_metrics dt=3.028s
+2026-06-04 18:00:33 pid=87377 EVAL_DONE  cid=8 round=NA dt=3.990s
+2026-06-04 18:00:33 pid=87376 EVAL_START cid=9 round=NA
+2026-06-04 18:00:33 pid=87376 CALL update_client
+2026-06-04 18:00:33 pid=87376 RET  update_client dt=0.079s
+2026-06-04 18:00:33 pid=87376 CALL wm_client
+2026-06-04 18:00:33 pid=87377 EVAL_START cid=0 round=NA
+2026-06-04 18:00:33 pid=87377 CALL update_client
+2026-06-04 18:00:33 pid=87377 RET  update_client dt=0.145s
+2026-06-04 18:00:33 pid=87377 CALL wm_client
+2026-06-04 18:00:33 pid=87376 RET  wm_client dt=0.468s
+2026-06-04 18:00:33 pid=87376 CALL save_parameters
+2026-06-04 18:00:33 pid=87376 RET  save_parameters dt=0.172s
+2026-06-04 18:00:33 pid=87376 CALL check_metrics
+2026-06-04 18:00:34 pid=87377 RET  wm_client dt=0.478s
+2026-06-04 18:00:34 pid=87377 CALL save_parameters
+2026-06-04 18:00:34 pid=87377 RET  save_parameters dt=0.363s
+2026-06-04 18:00:34 pid=87377 CALL check_metrics
+2026-06-04 18:00:36 pid=87376 RET  check_metrics dt=3.015s
+2026-06-04 18:00:36 pid=87376 EVAL_DONE  cid=9 round=NA dt=3.748s
+2026-06-04 18:00:37 pid=87376 EVAL_START cid=3 round=NA
+2026-06-04 18:00:37 pid=87376 CALL update_client
+2026-06-04 18:00:37 pid=87376 RET  update_client dt=0.074s
+2026-06-04 18:00:37 pid=87376 CALL wm_client
+2026-06-04 18:00:37 pid=87377 RET  check_metrics dt=3.024s
+2026-06-04 18:00:37 pid=87377 EVAL_DONE  cid=0 round=NA dt=4.027s
+2026-06-04 18:00:37 pid=87377 EVAL_START cid=5 round=NA
+2026-06-04 18:00:37 pid=87377 CALL update_client
+2026-06-04 18:00:37 pid=87376 RET  wm_client dt=0.506s
+2026-06-04 18:00:37 pid=87376 CALL save_parameters
+2026-06-04 18:00:38 pid=87377 RET  update_client dt=0.076s
+2026-06-04 18:00:38 pid=87377 CALL wm_client
+2026-06-04 18:00:38 pid=87376 RET  save_parameters dt=0.194s
+2026-06-04 18:00:38 pid=87376 CALL check_metrics
+2026-06-04 18:00:38 pid=87377 RET  wm_client dt=0.482s
+2026-06-04 18:00:38 pid=87377 CALL save_parameters
+2026-06-04 18:00:38 pid=87377 RET  save_parameters dt=0.199s
+2026-06-04 18:00:38 pid=87377 CALL check_metrics
+2026-06-04 18:00:41 pid=87376 RET  check_metrics dt=3.039s
+2026-06-04 18:00:41 pid=87376 EVAL_DONE  cid=3 round=NA dt=3.834s
+2026-06-04 18:00:41 pid=87377 RET  check_metrics dt=2.975s
+2026-06-04 18:00:41 pid=87377 EVAL_DONE  cid=5 round=NA dt=3.748s
+2026-06-04 18:00:47 pid=87377 FIT_START cid=6 round=NA
+2026-06-04 18:00:47 pid=87377 CALL train
+2026-06-04 18:00:47 pid=87376 FIT_START cid=0 round=NA
+2026-06-04 18:00:47 pid=87376 CALL train
+2026-06-04 18:00:47 pid=87377 RET  train dt=0.321s
+2026-06-04 18:00:47 pid=87377 FIT_DONE  cid=6 round=NA dt=0.325s
+2026-06-04 18:00:47 pid=87376 RET  train dt=0.319s
+2026-06-04 18:00:47 pid=87376 FIT_DONE  cid=0 round=NA dt=0.323s
+2026-06-04 18:00:47 pid=87377 FIT_START cid=1 round=NA
+2026-06-04 18:00:47 pid=87377 CALL train
+2026-06-04 18:00:47 pid=87376 FIT_START cid=2 round=NA
+2026-06-04 18:00:47 pid=87376 CALL train
+2026-06-04 18:00:48 pid=87377 RET  train dt=0.248s
+2026-06-04 18:00:48 pid=87377 FIT_DONE  cid=1 round=NA dt=0.252s
+2026-06-04 18:00:48 pid=87376 RET  train dt=0.253s
+2026-06-04 18:00:48 pid=87376 FIT_DONE  cid=2 round=NA dt=0.257s
+2026-06-04 18:00:48 pid=87377 FIT_START cid=3 round=NA
+2026-06-04 18:00:48 pid=87377 CALL train
+2026-06-04 18:00:48 pid=87376 FIT_START cid=4 round=NA
+2026-06-04 18:00:48 pid=87376 CALL train
+2026-06-04 18:00:49 pid=87377 RET  train dt=0.317s
+2026-06-04 18:00:49 pid=87377 FIT_DONE  cid=3 round=NA dt=0.324s
+2026-06-04 18:00:49 pid=87376 RET  train dt=0.334s
+2026-06-04 18:00:49 pid=87376 FIT_DONE  cid=4 round=NA dt=0.338s
+2026-06-04 18:00:49 pid=87377 FIT_START cid=5 round=NA
+2026-06-04 18:00:49 pid=87377 CALL train
+2026-06-04 18:00:49 pid=87376 FIT_START cid=7 round=NA
+2026-06-04 18:00:49 pid=87376 CALL train
+2026-06-04 18:00:49 pid=87377 RET  train dt=0.293s
+2026-06-04 18:00:49 pid=87377 FIT_DONE  cid=5 round=NA dt=0.297s
+2026-06-04 18:00:49 pid=87376 RET  train dt=0.286s
+2026-06-04 18:00:49 pid=87376 FIT_DONE  cid=7 round=NA dt=0.290s
+2026-06-04 18:00:50 pid=87376 FIT_START cid=9 round=NA
+2026-06-04 18:00:50 pid=87376 CALL train
+2026-06-04 18:00:50 pid=87377 FIT_START cid=8 round=NA
+2026-06-04 18:00:50 pid=87377 CALL train
+2026-06-04 18:00:50 pid=87376 RET  train dt=0.343s
+2026-06-04 18:00:50 pid=87376 FIT_DONE  cid=9 round=NA dt=0.347s
+2026-06-04 18:00:50 pid=87377 RET  train dt=0.341s
+2026-06-04 18:00:50 pid=87377 FIT_DONE  cid=8 round=NA dt=0.346s
+2026-06-04 18:00:51 pid=87377 EVAL_START cid=6 round=NA
+2026-06-04 18:00:51 pid=87377 CALL update_client
+2026-06-04 18:00:51 pid=87376 EVAL_START cid=0 round=NA
+2026-06-04 18:00:51 pid=87376 CALL update_client
+2026-06-04 18:00:51 pid=87377 RET  update_client dt=0.073s
+2026-06-04 18:00:51 pid=87377 CALL wm_client
+2026-06-04 18:00:51 pid=87376 RET  update_client dt=0.078s
+2026-06-04 18:00:51 pid=87376 CALL wm_client
+2026-06-04 18:00:52 pid=87377 RET  wm_client dt=0.464s
+2026-06-04 18:00:52 pid=87377 CALL save_parameters
+2026-06-04 18:00:52 pid=87376 RET  wm_client dt=0.544s
+2026-06-04 18:00:52 pid=87376 CALL save_parameters
+2026-06-04 18:00:52 pid=87377 RET  save_parameters dt=0.177s
+2026-06-04 18:00:52 pid=87377 CALL check_metrics
+2026-06-04 18:00:52 pid=87376 RET  save_parameters dt=0.206s
+2026-06-04 18:00:52 pid=87376 CALL check_metrics
+2026-06-04 18:00:55 pid=87377 RET  check_metrics dt=2.952s
+2026-06-04 18:00:55 pid=87377 EVAL_DONE  cid=6 round=NA dt=3.685s
+2026-06-04 18:00:55 pid=87376 RET  check_metrics dt=2.923s
+2026-06-04 18:00:55 pid=87376 EVAL_DONE  cid=0 round=NA dt=3.827s
+2026-06-04 18:00:55 pid=87377 EVAL_START cid=1 round=NA
+2026-06-04 18:00:55 pid=87377 CALL update_client
+2026-06-04 18:00:55 pid=87377 RET  update_client dt=0.073s
+2026-06-04 18:00:55 pid=87377 CALL wm_client
+2026-06-04 18:00:56 pid=87376 EVAL_START cid=4 round=NA
+2026-06-04 18:00:56 pid=87376 CALL update_client
+2026-06-04 18:00:56 pid=87376 RET  update_client dt=0.074s
+2026-06-04 18:00:56 pid=87376 CALL wm_client
+2026-06-04 18:00:56 pid=87377 RET  wm_client dt=0.489s
+2026-06-04 18:00:56 pid=87377 CALL save_parameters
+2026-06-04 18:00:56 pid=87377 RET  save_parameters dt=0.201s
+2026-06-04 18:00:56 pid=87377 CALL check_metrics
+2026-06-04 18:00:56 pid=87376 RET  wm_client dt=0.558s
+2026-06-04 18:00:56 pid=87376 CALL save_parameters
+2026-06-04 18:00:56 pid=87376 RET  save_parameters dt=0.181s
+2026-06-04 18:00:56 pid=87376 CALL check_metrics
+2026-06-04 18:00:59 pid=87377 RET  check_metrics dt=3.210s
+2026-06-04 18:00:59 pid=87377 EVAL_DONE  cid=1 round=NA dt=3.986s
+2026-06-04 18:00:59 pid=87376 RET  check_metrics dt=3.056s
+2026-06-04 18:00:59 pid=87376 EVAL_DONE  cid=4 round=NA dt=3.882s
+2026-06-04 18:01:00 pid=87377 EVAL_START cid=5 round=NA
+2026-06-04 18:01:00 pid=87377 CALL update_client
+2026-06-04 18:01:00 pid=87376 EVAL_START cid=7 round=NA
+2026-06-04 18:01:00 pid=87376 CALL update_client
+2026-06-04 18:01:00 pid=87377 RET  update_client dt=0.074s
+2026-06-04 18:01:00 pid=87377 CALL wm_client
+2026-06-04 18:01:00 pid=87376 RET  update_client dt=0.073s
+2026-06-04 18:01:00 pid=87376 CALL wm_client
+2026-06-04 18:01:00 pid=87377 RET  wm_client dt=0.478s
+2026-06-04 18:01:00 pid=87377 CALL save_parameters
+2026-06-04 18:01:01 pid=87376 RET  wm_client dt=0.583s
+2026-06-04 18:01:01 pid=87376 CALL save_parameters
+2026-06-04 18:01:01 pid=87377 RET  save_parameters dt=0.236s
+2026-06-04 18:01:01 pid=87377 CALL check_metrics
+2026-06-04 18:01:01 pid=87376 RET  save_parameters dt=0.225s
+2026-06-04 18:01:01 pid=87376 CALL check_metrics
+2026-06-04 18:01:04 pid=87377 RET  check_metrics dt=2.946s
+2026-06-04 18:01:04 pid=87377 EVAL_DONE  cid=5 round=NA dt=3.751s
+2026-06-04 18:01:04 pid=87376 RET  check_metrics dt=2.925s
+2026-06-04 18:01:04 pid=87376 EVAL_DONE  cid=7 round=NA dt=3.827s
+2026-06-04 18:01:04 pid=87377 EVAL_START cid=8 round=NA
+2026-06-04 18:01:04 pid=87377 CALL update_client
+2026-06-04 18:01:04 pid=87377 RET  update_client dt=0.071s
+2026-06-04 18:01:04 pid=87377 CALL wm_client
+2026-06-04 18:01:04 pid=87376 EVAL_START cid=9 round=NA
+2026-06-04 18:01:04 pid=87376 CALL update_client
+2026-06-04 18:01:04 pid=87376 RET  update_client dt=0.080s
+2026-06-04 18:01:04 pid=87376 CALL wm_client
+2026-06-04 18:01:05 pid=87377 RET  wm_client dt=0.487s
+2026-06-04 18:01:05 pid=87377 CALL save_parameters
+2026-06-04 18:01:05 pid=87377 RET  save_parameters dt=0.173s
+2026-06-04 18:01:05 pid=87377 CALL check_metrics
+2026-06-04 18:01:05 pid=87376 RET  wm_client dt=0.578s
+2026-06-04 18:01:05 pid=87376 CALL save_parameters
+2026-06-04 18:01:05 pid=87376 RET  save_parameters dt=0.170s
+2026-06-04 18:01:05 pid=87376 CALL check_metrics
+2026-06-04 18:01:08 pid=87377 RET  check_metrics dt=3.047s
+2026-06-04 18:01:08 pid=87377 EVAL_DONE  cid=8 round=NA dt=3.796s
+2026-06-04 18:01:08 pid=87376 RET  check_metrics dt=3.042s
+2026-06-04 18:01:08 pid=87376 EVAL_DONE  cid=9 round=NA dt=3.885s
+2026-06-04 18:01:08 pid=87377 EVAL_START cid=2 round=NA
+2026-06-04 18:01:08 pid=87377 CALL update_client
+2026-06-04 18:01:09 pid=87377 RET  update_client dt=0.088s
+2026-06-04 18:01:09 pid=87377 CALL wm_client
+2026-06-04 18:01:09 pid=87376 EVAL_START cid=3 round=NA
+2026-06-04 18:01:09 pid=87376 CALL update_client
+2026-06-04 18:01:09 pid=87376 RET  update_client dt=0.088s
+2026-06-04 18:01:09 pid=87376 CALL wm_client
+2026-06-04 18:01:09 pid=87377 RET  wm_client dt=0.498s
+2026-06-04 18:01:09 pid=87377 CALL save_parameters
+2026-06-04 18:01:09 pid=87376 RET  wm_client dt=0.556s
+2026-06-04 18:01:09 pid=87376 CALL save_parameters
+2026-06-04 18:01:09 pid=87377 RET  save_parameters dt=0.305s
+2026-06-04 18:01:09 pid=87377 CALL check_metrics
+2026-06-04 18:01:09 pid=87376 RET  save_parameters dt=0.196s
+2026-06-04 18:01:09 pid=87376 CALL check_metrics
+2026-06-04 18:01:12 pid=87377 RET  check_metrics dt=3.108s
+2026-06-04 18:01:12 pid=87377 EVAL_DONE  cid=2 round=NA dt=4.014s
+2026-06-04 18:01:12 pid=87376 RET  check_metrics dt=3.079s
+2026-06-04 18:01:12 pid=87376 EVAL_DONE  cid=3 round=NA dt=3.933s
+2026-06-04 18:01:18 pid=87376 FIT_START cid=2 round=NA
+2026-06-04 18:01:18 pid=87376 CALL train
+2026-06-04 18:01:18 pid=87377 FIT_START cid=6 round=NA
+2026-06-04 18:01:18 pid=87377 CALL train
+2026-06-04 18:01:18 pid=87377 RET  train dt=0.353s
+2026-06-04 18:01:18 pid=87376 RET  train dt=0.368s
+2026-06-04 18:01:18 pid=87377 FIT_DONE  cid=6 round=NA dt=0.356s
+2026-06-04 18:01:18 pid=87376 FIT_DONE  cid=2 round=NA dt=0.371s
+2026-06-04 18:01:19 pid=87376 FIT_START cid=8 round=NA
+2026-06-04 18:01:19 pid=87376 CALL train
+2026-06-04 18:01:19 pid=87377 FIT_START cid=7 round=NA
+2026-06-04 18:01:19 pid=87377 CALL train
+2026-06-04 18:01:19 pid=87376 RET  train dt=0.286s
+2026-06-04 18:01:19 pid=87376 FIT_DONE  cid=8 round=NA dt=0.291s
+2026-06-04 18:01:19 pid=87377 RET  train dt=0.292s
+2026-06-04 18:01:19 pid=87377 FIT_DONE  cid=7 round=NA dt=0.296s
+2026-06-04 18:01:20 pid=87376 FIT_START cid=1 round=NA
+2026-06-04 18:01:20 pid=87376 CALL train
+2026-06-04 18:01:20 pid=87377 FIT_START cid=3 round=NA
+2026-06-04 18:01:20 pid=87377 CALL train
+2026-06-04 18:01:20 pid=87376 RET  train dt=0.275s
+2026-06-04 18:01:20 pid=87376 FIT_DONE  cid=1 round=NA dt=0.278s
+2026-06-04 18:01:20 pid=87377 RET  train dt=0.270s
+2026-06-04 18:01:20 pid=87377 FIT_DONE  cid=3 round=NA dt=0.274s
+2026-06-04 18:01:20 pid=87376 FIT_START cid=4 round=NA
+2026-06-04 18:01:20 pid=87376 CALL train
+2026-06-04 18:01:20 pid=87377 FIT_START cid=9 round=NA
+2026-06-04 18:01:20 pid=87377 CALL train
+2026-06-04 18:01:20 pid=87376 RET  train dt=0.257s
+2026-06-04 18:01:20 pid=87376 FIT_DONE  cid=4 round=NA dt=0.261s
+2026-06-04 18:01:21 pid=87377 RET  train dt=0.255s
+2026-06-04 18:01:21 pid=87377 FIT_DONE  cid=9 round=NA dt=0.258s
+2026-06-04 18:01:21 pid=87376 FIT_START cid=0 round=NA
+2026-06-04 18:01:21 pid=87376 CALL train
+2026-06-04 18:01:21 pid=87376 RET  train dt=0.255s
+2026-06-04 18:01:21 pid=87376 FIT_DONE  cid=0 round=NA dt=0.259s
+2026-06-04 18:01:21 pid=87377 FIT_START cid=5 round=NA
+2026-06-04 18:01:21 pid=87377 CALL train
+2026-06-04 18:01:21 pid=87377 RET  train dt=0.246s
+2026-06-04 18:01:21 pid=87377 FIT_DONE  cid=5 round=NA dt=0.250s
+2026-06-04 18:01:23 pid=87377 EVAL_START cid=0 round=NA
+2026-06-04 18:01:23 pid=87376 EVAL_START cid=1 round=NA
+2026-06-04 18:01:23 pid=87377 CALL update_client
+2026-06-04 18:01:23 pid=87376 CALL update_client
+2026-06-04 18:01:23 pid=87377 RET  update_client dt=0.083s
+2026-06-04 18:01:23 pid=87376 RET  update_client dt=0.083s
+2026-06-04 18:01:23 pid=87377 CALL wm_client
+2026-06-04 18:01:23 pid=87376 CALL wm_client
+2026-06-04 18:01:23 pid=87377 RET  wm_client dt=0.507s
+2026-06-04 18:01:23 pid=87377 CALL save_parameters
+2026-06-04 18:01:23 pid=87376 RET  wm_client dt=0.573s
+2026-06-04 18:01:23 pid=87376 CALL save_parameters
+2026-06-04 18:01:23 pid=87377 RET  save_parameters dt=0.178s
+2026-06-04 18:01:23 pid=87377 CALL check_metrics
+2026-06-04 18:01:23 pid=87376 RET  save_parameters dt=0.240s
+2026-06-04 18:01:23 pid=87376 CALL check_metrics
+2026-06-04 18:01:26 pid=87377 RET  check_metrics dt=3.062s
+2026-06-04 18:01:26 pid=87377 EVAL_DONE  cid=0 round=NA dt=3.848s
+2026-06-04 18:01:26 pid=87376 RET  check_metrics dt=3.059s
+2026-06-04 18:01:26 pid=87376 EVAL_DONE  cid=1 round=NA dt=3.972s
+2026-06-04 18:01:27 pid=87377 EVAL_START cid=2 round=NA
+2026-06-04 18:01:27 pid=87377 CALL update_client
+2026-06-04 18:01:27 pid=87376 EVAL_START cid=3 round=NA
+2026-06-04 18:01:27 pid=87376 CALL update_client
+2026-06-04 18:01:27 pid=87377 RET  update_client dt=0.074s
+2026-06-04 18:01:27 pid=87377 CALL wm_client
+2026-06-04 18:01:27 pid=87376 RET  update_client dt=0.071s
+2026-06-04 18:01:27 pid=87376 CALL wm_client
+2026-06-04 18:01:27 pid=87377 RET  wm_client dt=0.477s
+2026-06-04 18:01:27 pid=87377 CALL save_parameters
+2026-06-04 18:01:28 pid=87376 RET  wm_client dt=0.579s
+2026-06-04 18:01:28 pid=87376 CALL save_parameters
+2026-06-04 18:01:28 pid=87377 RET  save_parameters dt=0.240s
+2026-06-04 18:01:28 pid=87377 CALL check_metrics
+2026-06-04 18:01:28 pid=87376 RET  save_parameters dt=0.175s
+2026-06-04 18:01:28 pid=87376 CALL check_metrics
+2026-06-04 18:01:31 pid=87377 RET  check_metrics dt=3.015s
+2026-06-04 18:01:31 pid=87377 EVAL_DONE  cid=2 round=NA dt=3.821s
+2026-06-04 18:01:31 pid=87376 RET  check_metrics dt=3.028s
+2026-06-04 18:01:31 pid=87376 EVAL_DONE  cid=3 round=NA dt=3.870s
+2026-06-04 18:01:31 pid=87377 EVAL_START cid=4 round=NA
+2026-06-04 18:01:31 pid=87376 EVAL_START cid=5 round=NA
+2026-06-04 18:01:31 pid=87377 CALL update_client
+2026-06-04 18:01:31 pid=87376 CALL update_client
+2026-06-04 18:01:32 pid=87377 RET  update_client dt=0.083s
+2026-06-04 18:01:32 pid=87376 RET  update_client dt=0.085s
+2026-06-04 18:01:32 pid=87376 CALL wm_client
+2026-06-04 18:01:32 pid=87377 CALL wm_client
+2026-06-04 18:01:32 pid=87377 RET  wm_client dt=0.507s
+2026-06-04 18:01:32 pid=87377 CALL save_parameters
+2026-06-04 18:01:32 pid=87376 RET  wm_client dt=0.627s
+2026-06-04 18:01:32 pid=87376 CALL save_parameters
+2026-06-04 18:01:32 pid=87377 RET  save_parameters dt=0.170s
+2026-06-04 18:01:32 pid=87377 CALL check_metrics
+2026-06-04 18:01:33 pid=87376 RET  save_parameters dt=0.360s
+2026-06-04 18:01:33 pid=87376 CALL check_metrics
+2026-06-04 18:01:35 pid=87377 RET  check_metrics dt=2.980s
+2026-06-04 18:01:35 pid=87377 EVAL_DONE  cid=4 round=NA dt=3.787s
+2026-06-04 18:01:36 pid=87376 RET  check_metrics dt=3.001s
+2026-06-04 18:01:36 pid=87376 EVAL_DONE  cid=5 round=NA dt=4.115s
+2026-06-04 18:01:36 pid=87377 EVAL_START cid=6 round=NA
+2026-06-04 18:01:36 pid=87377 CALL update_client
+2026-06-04 18:01:36 pid=87377 RET  update_client dt=0.077s
+2026-06-04 18:01:36 pid=87377 CALL wm_client
+2026-06-04 18:01:36 pid=87376 EVAL_START cid=7 round=NA
+2026-06-04 18:01:36 pid=87376 CALL update_client
+2026-06-04 18:01:36 pid=87376 RET  update_client dt=0.142s
+2026-06-04 18:01:36 pid=87376 CALL wm_client
+2026-06-04 18:01:36 pid=87377 RET  wm_client dt=0.460s
+2026-06-04 18:01:36 pid=87377 CALL save_parameters
+2026-06-04 18:01:36 pid=87377 RET  save_parameters dt=0.204s
+2026-06-04 18:01:36 pid=87377 CALL check_metrics
+2026-06-04 18:01:37 pid=87376 RET  wm_client dt=0.497s
+2026-06-04 18:01:37 pid=87376 CALL save_parameters
+2026-06-04 18:01:37 pid=87376 RET  save_parameters dt=0.172s
+2026-06-04 18:01:37 pid=87376 CALL check_metrics
+2026-06-04 18:01:39 pid=87377 RET  check_metrics dt=3.073s
+2026-06-04 18:01:39 pid=87377 EVAL_DONE  cid=6 round=NA dt=3.832s
+2026-06-04 18:01:40 pid=87376 RET  check_metrics dt=3.053s
+2026-06-04 18:01:40 pid=87376 EVAL_DONE  cid=7 round=NA dt=3.877s
+2026-06-04 18:01:40 pid=87377 EVAL_START cid=8 round=NA
+2026-06-04 18:01:40 pid=87377 CALL update_client
+2026-06-04 18:01:40 pid=87377 RET  update_client dt=0.073s
+2026-06-04 18:01:40 pid=87377 CALL wm_client
+2026-06-04 18:01:40 pid=87376 EVAL_START cid=9 round=NA
+2026-06-04 18:01:40 pid=87376 CALL update_client
+2026-06-04 18:01:40 pid=87377 RET  wm_client dt=0.469s
+2026-06-04 18:01:40 pid=87377 CALL save_parameters
+2026-06-04 18:01:41 pid=87376 RET  update_client dt=0.072s
+2026-06-04 18:01:41 pid=87376 CALL wm_client
+2026-06-04 18:01:41 pid=87377 RET  save_parameters dt=0.200s
+2026-06-04 18:01:41 pid=87377 CALL check_metrics
+2026-06-04 18:01:41 pid=87376 RET  wm_client dt=0.499s
+2026-06-04 18:01:41 pid=87376 CALL save_parameters
+2026-06-04 18:01:41 pid=87376 RET  save_parameters dt=0.278s
+2026-06-04 18:01:41 pid=87376 CALL check_metrics
+2026-06-04 18:01:44 pid=87377 RET  check_metrics dt=3.098s
+2026-06-04 18:01:44 pid=87377 EVAL_DONE  cid=8 round=NA dt=3.856s
+2026-06-04 18:01:44 pid=87376 RET  check_metrics dt=2.998s
+2026-06-04 18:01:44 pid=87376 EVAL_DONE  cid=9 round=NA dt=3.862s
+2026-06-04 18:01:50 pid=87376 FIT_START cid=0 round=NA
+2026-06-04 18:01:50 pid=87376 CALL train
+2026-06-04 18:01:50 pid=87377 FIT_START cid=1 round=NA
+2026-06-04 18:01:50 pid=87377 CALL train
+2026-06-04 18:01:51 pid=87376 RET  train dt=0.288s
+2026-06-04 18:01:51 pid=87376 FIT_DONE  cid=0 round=NA dt=0.291s
+2026-06-04 18:01:51 pid=87377 RET  train dt=0.284s
+2026-06-04 18:01:51 pid=87377 FIT_DONE  cid=1 round=NA dt=0.287s
+2026-06-04 18:01:51 pid=87376 FIT_START cid=3 round=NA
+2026-06-04 18:01:51 pid=87376 CALL train
+2026-06-04 18:01:51 pid=87377 FIT_START cid=2 round=NA
+2026-06-04 18:01:51 pid=87377 CALL train
+2026-06-04 18:01:52 pid=87376 RET  train dt=0.294s
+2026-06-04 18:01:52 pid=87376 FIT_DONE  cid=3 round=NA dt=0.298s
+2026-06-04 18:01:52 pid=87377 RET  train dt=0.288s
+2026-06-04 18:01:52 pid=87377 FIT_DONE  cid=2 round=NA dt=0.292s
+2026-06-04 18:01:52 pid=87376 FIT_START cid=4 round=NA
+2026-06-04 18:01:52 pid=87376 CALL train
+2026-06-04 18:01:52 pid=87377 FIT_START cid=5 round=NA
+2026-06-04 18:01:52 pid=87377 CALL train
+2026-06-04 18:01:52 pid=87376 RET  train dt=0.266s
+2026-06-04 18:01:52 pid=87376 FIT_DONE  cid=4 round=NA dt=0.270s
+2026-06-04 18:01:53 pid=87377 RET  train dt=0.261s
+2026-06-04 18:01:53 pid=87377 FIT_DONE  cid=5 round=NA dt=0.266s
+2026-06-04 18:01:53 pid=87376 FIT_START cid=8 round=NA
+2026-06-04 18:01:53 pid=87376 CALL train
+2026-06-04 18:01:53 pid=87377 FIT_START cid=9 round=NA
+2026-06-04 18:01:53 pid=87377 CALL train
+2026-06-04 18:01:53 pid=87376 RET  train dt=0.274s
+2026-06-04 18:01:53 pid=87376 FIT_DONE  cid=8 round=NA dt=0.277s
+2026-06-04 18:01:53 pid=87377 RET  train dt=0.267s
+2026-06-04 18:01:53 pid=87377 FIT_DONE  cid=9 round=NA dt=0.270s
+2026-06-04 18:01:54 pid=87376 FIT_START cid=6 round=NA
+2026-06-04 18:01:54 pid=87376 CALL train
+2026-06-04 18:01:54 pid=87377 FIT_START cid=7 round=NA
+2026-06-04 18:01:54 pid=87377 CALL train
+2026-06-04 18:01:54 pid=87376 RET  train dt=0.262s
+2026-06-04 18:01:54 pid=87376 FIT_DONE  cid=6 round=NA dt=0.266s
+2026-06-04 18:01:54 pid=87377 RET  train dt=0.424s
+2026-06-04 18:01:54 pid=87377 FIT_DONE  cid=7 round=NA dt=0.429s
+2026-06-04 18:01:55 pid=87377 EVAL_START cid=0 round=NA
+2026-06-04 18:01:55 pid=87377 CALL update_client
+2026-06-04 18:01:55 pid=87377 RET  update_client dt=0.075s
+2026-06-04 18:01:55 pid=87377 CALL wm_client
+2026-06-04 18:01:55 pid=87376 EVAL_START cid=5 round=NA
+2026-06-04 18:01:55 pid=87376 CALL update_client
+2026-06-04 18:01:55 pid=87376 RET  update_client dt=0.081s
+2026-06-04 18:01:55 pid=87376 CALL wm_client
+2026-06-04 18:01:56 pid=87377 RET  wm_client dt=0.471s
+2026-06-04 18:01:56 pid=87377 CALL save_parameters
+2026-06-04 18:01:56 pid=87377 RET  save_parameters dt=0.223s
+2026-06-04 18:01:56 pid=87377 CALL check_metrics
+2026-06-04 18:01:56 pid=87376 RET  wm_client dt=0.546s
+2026-06-04 18:01:56 pid=87376 CALL save_parameters
+2026-06-04 18:01:56 pid=87376 RET  save_parameters dt=0.188s
+2026-06-04 18:01:56 pid=87376 CALL check_metrics
+2026-06-04 18:01:59 pid=87377 RET  check_metrics dt=2.984s
+2026-06-04 18:01:59 pid=87377 EVAL_DONE  cid=0 round=NA dt=3.771s
+2026-06-04 18:01:59 pid=87376 RET  check_metrics dt=3.124s
+2026-06-04 18:01:59 pid=87376 EVAL_DONE  cid=5 round=NA dt=3.955s
+2026-06-04 18:01:59 pid=87377 EVAL_START cid=6 round=NA
+2026-06-04 18:01:59 pid=87377 CALL update_client
+2026-06-04 18:01:59 pid=87377 RET  update_client dt=0.076s
+2026-06-04 18:02:00 pid=87377 CALL wm_client
+2026-06-04 18:02:00 pid=87376 EVAL_START cid=8 round=NA
+2026-06-04 18:02:00 pid=87376 CALL update_client
+2026-06-04 18:02:00 pid=87376 RET  update_client dt=0.174s
+2026-06-04 18:02:00 pid=87376 CALL wm_client
+2026-06-04 18:02:00 pid=87377 RET  wm_client dt=0.464s
+2026-06-04 18:02:00 pid=87377 CALL save_parameters
+2026-06-04 18:02:00 pid=87377 RET  save_parameters dt=0.177s
+2026-06-04 18:02:00 pid=87377 CALL check_metrics
+2026-06-04 18:02:00 pid=87376 RET  wm_client dt=0.515s
+2026-06-04 18:02:00 pid=87376 CALL save_parameters
+2026-06-04 18:02:01 pid=87376 RET  save_parameters dt=0.363s
+2026-06-04 18:02:01 pid=87376 CALL check_metrics
+2026-06-04 18:02:03 pid=87377 RET  check_metrics dt=3.103s
+2026-06-04 18:02:03 pid=87377 EVAL_DONE  cid=6 round=NA dt=3.837s
+2026-06-04 18:02:04 pid=87377 EVAL_START cid=9 round=NA
+2026-06-04 18:02:04 pid=87377 CALL update_client
+2026-06-04 18:02:04 pid=87377 RET  update_client dt=0.072s
+2026-06-04 18:02:04 pid=87377 CALL wm_client
+2026-06-04 18:02:04 pid=87376 RET  check_metrics dt=3.043s
+2026-06-04 18:02:04 pid=87376 EVAL_DONE  cid=8 round=NA dt=4.112s
+2026-06-04 18:02:04 pid=87377 RET  wm_client dt=0.510s
+2026-06-04 18:02:04 pid=87377 CALL save_parameters
+2026-06-04 18:02:04 pid=87376 EVAL_START cid=1 round=NA
+2026-06-04 18:02:04 pid=87376 CALL update_client
+2026-06-04 18:02:04 pid=87376 RET  update_client dt=0.075s
+2026-06-04 18:02:04 pid=87376 CALL wm_client
+2026-06-04 18:02:04 pid=87377 RET  save_parameters dt=0.215s
+2026-06-04 18:02:04 pid=87377 CALL check_metrics
+2026-06-04 18:02:05 pid=87376 RET  wm_client dt=0.492s
+2026-06-04 18:02:05 pid=87376 CALL save_parameters
+2026-06-04 18:02:05 pid=87376 RET  save_parameters dt=0.232s
+2026-06-04 18:02:05 pid=87376 CALL check_metrics
+2026-06-04 18:02:08 pid=87377 RET  check_metrics dt=3.056s
+2026-06-04 18:02:08 pid=87377 EVAL_DONE  cid=9 round=NA dt=3.868s
+2026-06-04 18:02:08 pid=87377 EVAL_START cid=4 round=NA
+2026-06-04 18:02:08 pid=87377 CALL update_client
+2026-06-04 18:02:08 pid=87377 RET  update_client dt=0.083s
+2026-06-04 18:02:08 pid=87377 CALL wm_client
+2026-06-04 18:02:08 pid=87376 RET  check_metrics dt=3.014s
+2026-06-04 18:02:08 pid=87376 EVAL_DONE  cid=1 round=NA dt=3.831s
+2026-06-04 18:02:09 pid=87377 RET  wm_client dt=0.472s
+2026-06-04 18:02:09 pid=87377 CALL save_parameters
+2026-06-04 18:02:09 pid=87376 EVAL_START cid=7 round=NA
+2026-06-04 18:02:09 pid=87376 CALL update_client
+2026-06-04 18:02:09 pid=87376 RET  update_client dt=0.075s
+2026-06-04 18:02:09 pid=87376 CALL wm_client
+2026-06-04 18:02:09 pid=87377 RET  save_parameters dt=0.198s
+2026-06-04 18:02:09 pid=87377 CALL check_metrics
+2026-06-04 18:02:09 pid=87376 RET  wm_client dt=0.507s
+2026-06-04 18:02:09 pid=87376 CALL save_parameters
+2026-06-04 18:02:09 pid=87376 RET  save_parameters dt=0.174s
+2026-06-04 18:02:09 pid=87376 CALL check_metrics
+2026-06-04 18:02:12 pid=87377 RET  check_metrics dt=3.064s
+2026-06-04 18:02:12 pid=87377 EVAL_DONE  cid=4 round=NA dt=3.836s
+2026-06-04 18:02:12 pid=87377 EVAL_START cid=2 round=NA
+2026-06-04 18:02:12 pid=87377 CALL update_client
+2026-06-04 18:02:12 pid=87377 RET  update_client dt=0.082s
+2026-06-04 18:02:12 pid=87377 CALL wm_client
+2026-06-04 18:02:12 pid=87376 RET  check_metrics dt=3.020s
+2026-06-04 18:02:12 pid=87376 EVAL_DONE  cid=7 round=NA dt=3.797s
+2026-06-04 18:02:13 pid=87377 RET  wm_client dt=0.452s
+2026-06-04 18:02:13 pid=87377 CALL save_parameters
+2026-06-04 18:02:13 pid=87376 EVAL_START cid=3 round=NA
+2026-06-04 18:02:13 pid=87376 CALL update_client
+2026-06-04 18:02:13 pid=87376 RET  update_client dt=0.073s
+2026-06-04 18:02:13 pid=87376 CALL wm_client
+2026-06-04 18:02:13 pid=87377 RET  save_parameters dt=0.179s
+2026-06-04 18:02:13 pid=87377 CALL check_metrics
+2026-06-04 18:02:13 pid=87376 RET  wm_client dt=0.515s
+2026-06-04 18:02:13 pid=87376 CALL save_parameters
+2026-06-04 18:02:14 pid=87376 RET  save_parameters dt=0.165s
+2026-06-04 18:02:14 pid=87376 CALL check_metrics
+2026-06-04 18:02:16 pid=87377 RET  check_metrics dt=3.040s
+2026-06-04 18:02:16 pid=87377 EVAL_DONE  cid=2 round=NA dt=3.772s
+2026-06-04 18:02:17 pid=87376 RET  check_metrics dt=3.014s
+2026-06-04 18:02:17 pid=87376 EVAL_DONE  cid=3 round=NA dt=3.784s

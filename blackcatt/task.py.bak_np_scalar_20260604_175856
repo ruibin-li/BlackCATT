@@ -4,7 +4,6 @@ from blackcatt.partitioning import make_partitioner, print_label_distribution
 from collections import OrderedDict, Counter
 
 import torch
-import numpy as np
 from flwr_datasets import FederatedDataset
 from flwr_datasets.partitioner import IidPartitioner, PathologicalPartitioner
 
@@ -112,7 +111,7 @@ def train(net, client_state, trainloader, device, max_batches=wm_config.max_batc
     avg_trainloss = running_loss / n_batches
     
     # Share incremental update
-    incremental_update = [np.asarray(new - old, dtype=old.dtype) for new, old in zip(get_weights(net), client_params)]
+    incremental_update = [new - old for new, old in zip(get_weights(net), client_params)]
     return incremental_update, avg_trainloss
 
 
@@ -194,7 +193,7 @@ def update_client(net,parameters,client_state):
     p_record = client_state.parameters_records["net_parameters"]
     new_weights = ParametersRecord()
     for (k, v), p in zip(p_record.items(), parameters):
-        new_weights[k] = array_from_numpy(np.asarray(v.numpy() + p, dtype=v.numpy().dtype))
+        new_weights[k] = array_from_numpy(v.numpy() + p)
 
     # Load updated weights directly into model
     state_dict = OrderedDict({k: torch.from_numpy(v.numpy()) for k, v in new_weights.items()})

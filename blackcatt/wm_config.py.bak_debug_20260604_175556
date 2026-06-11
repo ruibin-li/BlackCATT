@@ -18,7 +18,7 @@ n_users = 10 # = options.num-supernodes in pyproject.toml
 user_fraction = 10 / n_users # = fraction-fit in pyproject.toml
 mlr = 0.01 # main task learning rate
 mbs = 64 # local minibatch size
-max_batches = 78
+max_batches = (50000//n_users)//mbs # 1 local epoch total data//mbs
 dataset = "CIFAR10" # "CIFAR100" # "CIFAR10"
 n_classes = 10 # 10 for CIFAR10, 100 for CIFAR100
 model = "ResNet183x3" # "ResNet183x3" # "VGG16"
@@ -34,7 +34,7 @@ num_shards_per_client = 5
 partition_seed = 42
 class_assignment_mode = "first-deterministic"
 print_partition_stats = False
-metrics_interval = 25
+metrics_interval = 1
 run_tag = "iid500_r1"
 
 

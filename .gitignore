@@ -1,13 +1,27 @@
+# large experiment outputs
+FL_models/
+data/
+datasets/
+wandb/
+runs/
+outputs/
+checkpoints/
+analysis_auc_short/
 
-# local env
-.venv/
+# model/data files
+*.pth
+*.pt
+*.ckpt
+*.pkl
+*.npy
+*.npz
+*.zip
+*.tar
+*.tar.gz
 
-# generated files
+# python cache
 __pycache__/
 *.pyc
 
-# models/checkpoints
-FL_models/
-
-# temporary backups
-*.bak*
+# system
+.DS_Store

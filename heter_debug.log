@@ -1,0 +1,3 @@
+nohup: ignoring input
+⚠️ Warning: `options.` fields in the SuperLink connection configuration are deprecated. Use `--federation-config` with `flwr run` instead. Alternatively, permanently set your simulation configuration via `flwr federation simulation-config`.
+🎊 Successfully started run 3482011117399587287
