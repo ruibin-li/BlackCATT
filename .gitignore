@@ -55,3 +55,18 @@ wandb/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+__pycache__/
+.venv/
+wandb/
+*.pt
+*.pth
+*.ckpt
+data/
+outputs/
+.env
+
+# analysis outputs
+analysis_tardos_prefix_replay_250/
+analysis_tardos_prefix_replay_500/
+analysis_tardos_prefix_replay_final/
+analysis_threshold_scores/

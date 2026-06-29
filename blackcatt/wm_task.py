@@ -692,32 +692,104 @@ def tardos_score(x,y,p):
       t_score -= np.sqrt((p[i_p,y[i_p]])/(1-p[i_p,y[i_p]]))
   return t_score
 
-
-def tardos_accusation(y,vectors,p_secret,tau,pfp=0.000001):
+def tardos_accusation(y, vectors, p_secret, tau, pfp=0.000001, trace_meta=None):
+  import os
+  import csv
   t_score = np.zeros(vectors.shape[0])
+
+  trace_path = os.environ.get("BLACKCATT_TARDOS_TRACE", "")
+  trace_meta = trace_meta or {}
+
+  global _BLACKCATT_TARDOS_TRACE_CALL_IDX
+  try:
+    _BLACKCATT_TARDOS_TRACE_CALL_IDX += 1
+  except NameError:
+    _BLACKCATT_TARDOS_TRACE_CALL_IDX = 0
+
+  call_idx = _BLACKCATT_TARDOS_TRACE_CALL_IDX
+  run_tag = trace_meta.get("run", os.environ.get("BLACKCATT_RUN_TAG", "NA"))
+  eval_client = trace_meta.get("eval_client", "NA")
+  colluders = set(str(x) for x in trace_meta.get("colluders", []))
+
+  first_tp = -1
+  first_m_needed = vectors.shape[1]
 
   for mi in range(vectors.shape[1]):
     # Calculate threshold according to Skoric and Oosterwijk 2012
-    a = 1/(2*np.log(pfp))
-    b = 1/(3*np.sqrt(tau))
-    c = mi+1
-    disc = b*b-4*a*c
+    a = 1 / (2 * np.log(pfp))
+    b = 1 / (3 * np.sqrt(tau))
+    c = mi + 1
+    disc = b * b - 4 * a * c
+
+    Z = np.nan
     if disc >= 0:
-      x1 = (-b+np.sqrt(disc))/(2*a)
-      x2 = (-b-np.sqrt(disc))/(2*a)
+      x1 = (-b + np.sqrt(disc)) / (2 * a)
+      x2 = (-b - np.sqrt(disc)) / (2 * a)
       if x1 > 0 and x2 > 0:
-        Z = min([x1,x2])
+        Z = min([x1, x2])
       elif x1 > 0:
         Z = x1
       elif x2 > 0:
         Z = x2
-    
+
     # Calculate the Tardos score for each client
     for client_index in range(vectors.shape[0]):
-      t_score[client_index] += tardos_score(vectors[client_index, mi:mi+1], y[mi:mi+1], p_secret[mi:mi+1])
-    
-    # Accuse if the score is above the threshold
-    if max(t_score) > Z:
-      return np.argmax(t_score) , mi+1
-    
-  return -1 , mi+1
+      inc = tardos_score(
+        vectors[client_index, mi:mi+1],
+        y[mi:mi+1],
+        p_secret[mi:mi+1],
+      )
+      t_score[client_index] += float(np.asarray(inc).sum())
+
+    # Original accusation condition
+    accused_at_prefix = -1
+    if np.isfinite(Z) and max(t_score) > Z:
+      accused_at_prefix = int(np.argmax(t_score))
+
+      # Preserve original first-crossing behavior
+      if first_tp == -1:
+        first_tp = accused_at_prefix
+        first_m_needed = mi + 1
+
+    # Extra logging, controlled by environment variable
+    if trace_path:
+      write_header = not os.path.exists(trace_path)
+
+      with open(trace_path, "a", newline="") as f:
+        writer = csv.writer(f)
+
+        if write_header:
+          writer.writerow([
+            "run",
+            "call_idx",
+            "eval_client",
+            "prefix_len",
+            "cid",
+            "is_colluder",
+            "score",
+            "threshold",
+            "margin",
+            "accused_at_prefix",
+            "first_tp_so_far",
+            "pfp",
+            "tau",
+          ])
+
+        for cid, score in enumerate(t_score):
+          writer.writerow([
+            run_tag,
+            call_idx,
+            eval_client,
+            mi + 1,
+            cid,
+            int(str(cid) in colluders),
+            float(score),
+            float(Z),
+            float(score - Z) if np.isfinite(Z) else np.nan,
+            accused_at_prefix,
+            first_tp,
+            pfp,
+            tau,
+          ])
+
+  return first_tp, first_m_needed
