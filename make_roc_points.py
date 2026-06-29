@@ -11,7 +11,7 @@ for run, g in df.groupby("run"):
         y_true = g["guilty"].values
         y_score = g[score_col].values
 
-        fpr, tpr, thr = roc_curve(y_true, y_score)
+        fpr, tpr, thr = roc_curve(y_true, y_score, drop_intermediate=False)
         auc = roc_auc_score(y_true, y_score)
 
         summary.append({
@@ -29,7 +29,7 @@ for run, g in df.groupby("run"):
                 "score": score_col,
                 "fpr": a,
                 "tpr": b,
-                "threshold": c,
+                "threshold": c, "fnr": 1-b,
             })
 
 pd.DataFrame(rows).to_csv("analysis_auc_short/roc_points.csv", index=False)
